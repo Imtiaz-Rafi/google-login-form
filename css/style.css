@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btns {}
+
+/* Sign-Up */
+
+.signup {}
+
+.signup-container {
+    width: 750px;
+    margin: 0px auto;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.border {
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+}
+
+.signup-content {
+    display: flex;
+}
+
+.signup-content>.content-left {}
+
+.signup-content>.content-right {
+    padding-left: 50px;
+    padding-top: 100px;
+    text-align: center;
+
+}
+
+.content-right>.content-image {}
+
+.content-right>.content-tagline>p {
+    font-weight: 300;
+    font-size: 16px;
+    color: #202124;
+    font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+}
+
+.content-left>.logo>img {
+    width: 100px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.signup-headings>h3 {
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3333;
+    padding: 15px 0px;
+}
+
+.signup-text>p {
+    font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+    color: #202124;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.input-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.input-box {
+    position: relative;
+    margin: 10px 0px;
+}
+
+.input {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid rgb(218, 220, 224);
+    color: #202124;
+    padding: 6px 8px;
+    height: 35px;
+    width: 100%;
+    transition: .25s;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #1a73e8;
+}
+
+.input-label {
+    position: absolute;
+    color: #6c6f72;
+    font-size: 14px;
+    font-weight: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    top: 8px;
+    left: 8px;
+    padding: 0px 5px;
+    transition: .25s;
+}
+
+.input:focus+.input-label {
+    color: #1a73e8;
+}
+
+.input-box.active .input-label,
+.input:focus+.input-label,
+.input:active+.input-label {
+    top: -6px;
+    background-color: #ffffff;
+    font-size: 11px;
+}
+
+.error {
+    border-color: #d93025;
+}
+
+.error+.input-label {}
+
+.err-txt {
+    font-family: roboto;
+    font-size: 12px;
+    color: #d93025;
+    padding: 5px 0px;
+}
+
+.info-text {
+    font-family: roboto;
+    font-size: 12px;
+    padding: 0px 10px;
+    color: #6c6f72;
+}
+
+.input-check {
+    display: flex;
+    align-items: center;
+}
+
+.check-text {
+    padding: 0px 10px;
+    color: #3b3b3b;
+    font-size: 14px;
+}
+
+.checkbox {
+    display: flex;
+}
+
+input[type=checkbox] {
+    width: 20px;
+}
+
+.form-bottom {
+    padding-top: 60px;
+    align-items: center;
+}
+
+.link-btn>a {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-weight: 500;
+    color: #1a73e8;
+    font-size: 14px;
+    padding: 10px 15px;
+}
+
+.link-btn>a:hover {
+    background: #f5f9ff;
+    border-radius: 4px;
+    color: #0e5fc9;
+}
+
+.input-btn>button {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-weight: 500;
+    background: #1a73e8;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.input-btn>button:hover {
+    background-color: #1661c4;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    /* box-shadow: 0 1px 2px 0 var(--gm-fillbutton-keyshadow-color, rgba(60, 64, 67, .3)), 0 1px 3px 1px var(--gm-fillbutton-ambientshadow-color, rgba(60, 64, 67, .15)); */
+}

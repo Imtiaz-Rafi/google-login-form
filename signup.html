@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Create your Google Account</title>
+</head>
+
+<body>
+    <section class="signup">
+        <div class="signup-container border">
+            <div class="signup-content">
+                <div class="content-left">
+                    <div class="logo">
+                        <img src="./images/google-logo.png" alt="Google Logo">
+                    </div>
+                    <div class="signup-taglines">
+                        <div class="signup-headings">
+                            <h3>Create your Google Account</h3>
+                        </div>
+                        <div class="signup-text">
+                            <p>to continue to Gmail</p>
+                        </div>
+                    </div>
+                    <div class="signup-forms">
+                        <form action="#" method="post" name="signUpForm">
+                            <div class="input-flex">
+                                <div class="input-box w-50" onchange="isActive()">
+                                    <input type="text" class="input" name="fname" id="fname">
+                                    <label for="fname" class="input-label">First Name</label>
+                                    <div id="fname-error" class="err-txt"></div>
+                                </div>
+                                <div class="input-box w-50" onchange="isActive()">
+                                    <input type="text" class="input" name="lname" id="lname">
+                                    <label for="lname" class="input-label">Last Name</label>
+                                    <div id="lname-error" class="err-txt"></div>
+                                </div>
+                            </div>
+                            <div class="input-box w-100" onchange="isActive()">
+                                <input type="text" class="input" name="email" id="email">
+                                <label for="email" class="input-label">Username</label>
+                                <div id="mail-error" class="err-txt"></div>
+                                <div id="mail-text" class="info-text">You can use letters, numbers & periods</div>
+                            </div>
+                            <div class="input-flex">
+                                <div class="input-box w-50" onchange="isActive()">
+                                    <input type="password" class="input" name="pass" id="pass">
+                                    <label for="pass" class="input-label">Password</label>
+                                    <div id="pass-error" class="err-txt"></div>
+                                    <div id="pass-text" class="info-text">Use 8 or more characters with a mix of
+                                        letters, numbers & symbols</div>
+                                </div>
+                                <div class="input-box w-50" onchange="isActive()">
+                                    <input type="password" class="input" name="conpass" id="conpass">
+                                    <label for="conpass" class="input-label">Confirm</label>
+                                    <div id="conpass-error" class="err-txt"></div>
+                                </div>
+                            </div>
+
+                            <div class="input-box input-check">
+                                <div class="checkbox">
+                                    <input type="checkbox" name="checkbox" id="checkbox" width="100px">
+                                    <p class="check-text">Show Password</p>
+                                </div>
+                            </div>
+                            <div class="form-bottom input-flex">
+                                <div class="link-btn">
+                                    <a href="login.html">Sign in instead</a>
+                                </div>
+                                <div class="input-btn">
+                                    <button type="submit" onclick="signup()">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <div class="content-image">
+                        <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="" width="244"
+                            height="244" class="" alt="right image">
+                    </div>
+                    <div class="content-tagline">
+                        <p>One account. All of Google working for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+<script src="js/script.js"></script>
+
+</html>
