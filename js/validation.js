@@ -119,7 +119,7 @@ function signUpSubmit() {
         } else {
             const user = localStorage.setItem(
                 "name",
-                fname.value + lname.value
+                fname.value + " " + lname.value
             );
             const mail = localStorage.setItem("mail", email.value);
             const pswd = localStorage.setItem("password", pass.value);
