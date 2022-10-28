@@ -36,6 +36,20 @@ a {
     transition: .2s;
 }
 
+.login-container {
+    width: 450px;
+    margin: 0px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s;
+}
+
+.login-content {
+    padding: 40px;
+}
+
 .border {
     border: 1px solid #dadce0;
     border-radius: 8px;
@@ -64,15 +78,25 @@ a {
     font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
 }
 
+.login-header {
+    text-align: center;
+}
+
+.login-header>.logo>img {
+    width: 70px;
+
+}
+
 .content-left>.logo>img {
-    width: 100px;
+    width: 70px;
 }
 
 .w-100 {
     width: 100%;
 }
 
-.signup-headings>h3 {
+.signup-headings>h3,
+.login-headings>h3 {
     font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
     font-size: 24px;
     font-weight: 400;
@@ -80,7 +104,8 @@ a {
     padding: 15px 0px;
 }
 
-.signup-text>p {
+.signup-text>p,
+.login-text>p {
     font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
     color: #202124;
     font-size: 16px;
@@ -118,6 +143,12 @@ a {
     margin: 2px;
 }
 
+.login-input {
+    font-size: 16px;
+    height: 50px;
+    padding: 13px 15px;
+}
+
 input:focus {
     outline: none;
     border: 2px solid #1a73e8;
@@ -139,6 +170,12 @@ input.error:focus {
     left: 8px;
     padding: 0px 5px;
     transition: .25s;
+}
+
+.login-label {
+    font-size: 16px;
+    top: 18px;
+    left: 12px;
 }
 
 .input:focus+.input-label {
@@ -169,6 +206,7 @@ input.error:focus {
     padding: 5px 0px;
     display: flex;
     gap: 10px;
+    align-items: flex-end;
 }
 
 .info-text {
@@ -195,6 +233,30 @@ input.error:focus {
 
 input[type=checkbox] {
     width: 20px;
+}
+
+.forgot-mail,
+.login-desc {
+    padding: 10px 0px;
+}
+
+.forgot-mail>a,
+.learn-more>a {
+    font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+    color: #1a73e8;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .25px;
+}
+
+.login-desc {
+    margin-top: 32px;
+}
+
+.login-desc>p {
+    color: #5f6368;
+    font-size: 14px;
+    line-height: 1.4286;
 }
 
 .form-bottom {

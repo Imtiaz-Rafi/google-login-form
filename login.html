@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,58 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Gmail</title>
 </head>
+
 <body>
-    Login
+    <section class="login">
+        <div class="login-container ">
+            <div class="login-content border">
+                <div class="login-header">
+                    <div class="logo">
+                        <img src="./images/google-logo.png" alt="Google Logo">
+                    </div>
+                    <div class="login-taglines">
+                        <div class="login-headings">
+                            <h3>Sign in</h3>
+                        </div>
+                        <div class="login-text">
+                            <p>to continue to Gmail</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="signup-forms">
+                    <form action="pass.html" method="post" name="mailForm">
+                        <div class="input-box w-100" onchange="isActive()">
+                            <input type="text" class="input login-input" name="email" id="email">
+                            <label for="email" class="input-label login-label">Email or Phone</label>
+                            <span id="mail-error"></span>
+                        </div>
+                        <div class="forgot-mail">
+                            <a href="#">Forgot email?</a>
+                        </div>
+                        <div class="login-desc">
+                            <p>Not your computer? Use Guest mode to sign in privately.
+                                <span class="learn-more">
+                                    <a href="#">Learn more</a>
+                                </span>
+
+                            </p>
+                        </div>
+                        <div class="form-bottom">
+                            <div class="link-btn">
+                                <a href="signup.html">Create account</a>
+                            </div>
+                            <div class="input-btn">
+                                <button type="submit">Next</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 <script src="js/script.js"></script>
+<script src="js/varification.js"></script>
+
 </html>

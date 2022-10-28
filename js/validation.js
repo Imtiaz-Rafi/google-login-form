@@ -1,18 +1,5 @@
 let signUpForm = document.forms.signUpForm;
-let mailText = document.querySelector("#mail-text");
-let passText = document.querySelector("#pass-text");
-let fnameError = document.querySelector("#fname-error");
-let lnameError = document.querySelector("#lname-error");
-let mailError = document.querySelector("#mail-error");
-let passError = document.querySelector("#pass-error");
-let conPassError = document.querySelector("#conpass-error");
-let token = true;
 
-let fname = document.querySelector("#fname");
-let lname = document.querySelector("#lname");
-let email = document.querySelector("#email");
-let pass = document.querySelector("#pass");
-let conPass = document.querySelector("#conpass");
 let icon = `<svg
         aria-hidden="true"
         class="stUf5b qpSchb"
@@ -26,6 +13,21 @@ let icon = `<svg
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
     </svg>`;
 signUpForm.onsubmit = function () {
+    let token = true;
+    let mailText = document.querySelector("#mail-text");
+    let passText = document.querySelector("#pass-text");
+    let fnameError = document.querySelector("#fname-error");
+    let lnameError = document.querySelector("#lname-error");
+    let mailError = document.querySelector("#mail-error");
+    let passError = document.querySelector("#pass-error");
+    let conPassError = document.querySelector("#conpass-error");
+
+    let fname = document.querySelector("#fname");
+    let lname = document.querySelector("#lname");
+    let email = document.querySelector("#email");
+    let pass = document.querySelector("#pass");
+    let conPass = document.querySelector("#conpass");
+
     if (!fname.value && !lname.value) {
         fname.classList.add("error");
         lname.classList.add("error");
@@ -115,9 +117,9 @@ signUpForm.onsubmit = function () {
     if (token === false) {
         return false;
     } else {
-        var user = localStorage.setItem("name", fname.value + lname.value);
-        var mail = localStorage.setItem("mail", email.value);
-        var pswd = localStorage.setItem("password", pass.value);
+        const user = localStorage.setItem("name", fname.value + lname.value);
+        const mail = localStorage.setItem("mail", email.value);
+        const pswd = localStorage.setItem("password", pass.value);
         return true;
     }
 };
