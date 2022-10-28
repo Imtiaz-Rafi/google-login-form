@@ -29,11 +29,11 @@ a {
 .signup-container {
     width: 750px;
     margin: 0px auto;
-    padding: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: .2s;
 }
 
 .border {
@@ -43,6 +43,7 @@ a {
 
 .signup-content {
     display: flex;
+    padding: 40px;
 }
 
 .signup-content>.content-left {}
@@ -101,7 +102,7 @@ a {
 
 .input-box {
     position: relative;
-    margin: 10px 0px;
+    margin-top: 20px;
 }
 
 .input {
@@ -114,11 +115,16 @@ a {
     height: 35px;
     width: 100%;
     transition: .25s;
+    margin: 2px;
 }
 
 input:focus {
     outline: none;
-    border: 1px solid #1a73e8;
+    border: 2px solid #1a73e8;
+}
+
+input.error:focus {
+    border: 2px solid #d93025;
 }
 
 .input-label {
@@ -139,9 +145,12 @@ input:focus {
     color: #1a73e8;
 }
 
+.input.error:focus+.input-label {
+    color: #d93025;
+}
+
 .input-box.active .input-label,
-.input:focus+.input-label,
-.input:active+.input-label {
+.input:focus+.input-label {
     top: -6px;
     background-color: #ffffff;
     font-size: 11px;
@@ -158,12 +167,14 @@ input:focus {
     font-size: 12px;
     color: #d93025;
     padding: 5px 0px;
+    display: flex;
+    gap: 10px;
 }
 
 .info-text {
     font-family: roboto;
     font-size: 12px;
-    padding: 0px 10px;
+    padding: 5px 10px;
     color: #6c6f72;
 }
 
@@ -187,6 +198,8 @@ input[type=checkbox] {
 }
 
 .form-bottom {
+    display: flex;
+    justify-content: space-between;
     padding-top: 60px;
     align-items: center;
 }
@@ -196,7 +209,7 @@ input[type=checkbox] {
     font-weight: 500;
     color: #1a73e8;
     font-size: 14px;
-    padding: 10px 15px;
+    padding: 10px;
 }
 
 .link-btn>a:hover {
@@ -221,4 +234,43 @@ input[type=checkbox] {
     cursor: pointer;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     /* box-shadow: 0 1px 2px 0 var(--gm-fillbutton-keyshadow-color, rgba(60, 64, 67, .3)), 0 1px 3px 1px var(--gm-fillbutton-ambientshadow-color, rgba(60, 64, 67, .15)); */
+}
+
+@media only screen and (max-width: 900px) {
+    .signup-container {
+        width: 450px;
+    }
+
+    .content-right {
+        display: none;
+    }
+
+    .signup-content {
+        display: block;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .border {
+        border: none;
+    }
+
+    .signup-container {
+        width: 100%;
+    }
+
+    .input-flex {
+        display: block;
+    }
+
+    .w-50 {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width:450px) {
+    .signup-content {
+        padding: 40px 20px;
+    }
 }
