@@ -48,6 +48,8 @@ a {
 
 .login-content {
     padding: 40px;
+    height: auto;
+    min-height: 500px;
 }
 
 .border {
@@ -147,6 +149,39 @@ a {
     font-size: 16px;
     height: 50px;
     padding: 13px 15px;
+}
+.login-link{
+    width: 100%;
+}
+
+.login-mail-link {
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.login-mail-link:hover {
+    background: rgba(60, 64, 67, 0.039)
+}
+
+.login-mail-link>.mail-icon>svg,
+.login-mail-link>.down-arrow>svg {
+    width: 20px;
+    padding: 0px 5px;
+}
+
+.login-mail-link>.mail-name>p {
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    color: #3c4043;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
 }
 
 input:focus {

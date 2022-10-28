@@ -17,10 +17,12 @@ function showPass() {
     var conPass = document.querySelector("#conpass");
     if (togglePass) {
         pass.type = "text";
-        conPass.type = "text";
+        if(conPass)
+            conPass.type = "text";
     } else {
         pass.type = "password";
-        conPass.type = "password";
+        if(conPass)
+            conPass.type = "password";
     }
     togglePass = !togglePass;
 }
