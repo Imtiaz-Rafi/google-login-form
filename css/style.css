@@ -201,7 +201,7 @@ input.error:focus {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    top: 8px;
+    top: 12px;
     left: 8px;
     padding: 0px 5px;
     transition: .25s;
