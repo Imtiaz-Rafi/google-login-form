@@ -197,14 +197,14 @@ input.error:focus {
     position: absolute;
     color: #6c6f72;
     font-size: 14px;
-    font-weight: 400px;
+    font-weight: 400;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    top: 12px;
+    top: 10px;
     left: 8px;
     padding: 0px 5px;
-    transition: .25s;
+    transition: .20s;
 }
 
 .login-label {
@@ -217,11 +217,12 @@ input.error:focus {
     color: #1a73e8;
 }
 
-.input.error:focus+.input-label {
+.input.error:focus+.input-label,
+.input.error.active+.input-label {
     color: #d93025;
 }
 
-.input-box.active .input-label,
+.input.active+.input-label,
 .input:focus+.input-label {
     top: -6px;
     background-color: #ffffff;
@@ -241,7 +242,6 @@ input.error:focus {
     padding: 5px 0px;
     display: flex;
     gap: 10px;
-    align-items: flex-end;
 }
 
 .info-text {

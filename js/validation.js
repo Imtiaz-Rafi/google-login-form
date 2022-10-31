@@ -16,11 +16,12 @@ function signUpSubmit() {
         let token = true;
         let mailText = document.querySelector("#mail-text");
         let passText = document.querySelector("#pass-text");
-        let fnameError = document.querySelector("#fname-error");
-        let lnameError = document.querySelector("#lname-error");
+        let nameError = document.querySelector("#name-error");
+        // let fnameError = document.querySelector("#fname-error");
+        // let lnameError = document.querySelector("#lname-error");
         let mailError = document.querySelector("#mail-error");
         let passError = document.querySelector("#pass-error");
-        let conPassError = document.querySelector("#conpass-error");
+        // let conPassError = document.querySelector("#conpass-error");
 
         let fname = document.querySelector("#fname");
         let lname = document.querySelector("#lname");
@@ -31,27 +32,26 @@ function signUpSubmit() {
         if (!fname.value && !lname.value) {
             fname.classList.add("error");
             lname.classList.add("error");
-            fnameError.classList.add("err-txt");
-            fnameError.innerHTML = icon + `<p>Enter first & last names</p>`;
+            nameError.classList.add("err-txt");
+            nameError.innerHTML = icon + `<p>Enter first name and surname</p>`;
+            token = false;
+        } else if (!fname.value && lname.value) {
+            fname.classList.add("error");
+            lname.classList.remove("error");
+            nameError.classList.add("err-txt");
+            nameError.innerHTML = icon + `<p>Enter first name</p>`;
+            token = false;
+        } else if (!lname.value && fname.value) {
+            lname.classList.add("error");
+            fname.classList.remove("error");
+            nameError.classList.add("err-txt");
+            nameError.innerHTML = icon + `<p>Enter last name</p>`;
+            token = false;
         } else {
-            if (!fname.value) {
-                fname.classList.add("error");
-                fnameError.classList.add("err-txt");
-                fnameError.innerHTML = icon + `<p>Enter first name</p>`;
-                token = false;
-            } else {
-                fname.classList.remove("error");
-                fnameError.innerHTML = "";
-            }
-            if (!lname.value) {
-                lname.classList.add("error");
-                lnameError.classList.add("err-txt");
-                lnameError.innerHTML = icon + `<p>Enter last name</p>`;
-                token = false;
-            } else {
-                lname.classList.remove("error");
-                lnameError.innerHTML = "";
-            }
+            lname.classList.remove("error");
+            fname.classList.remove("error");
+            nameError.classList.remove("err-txt");
+            nameError.innerHTML = "";
         }
         // EMAIL
         if (!email.value) {
@@ -82,6 +82,8 @@ function signUpSubmit() {
             passError.classList.add("err-txt");
             passError.innerHTML = icon + `<span>Enter a password</span>`;
             passText.innerHTML = "";
+            passText.classList.remove("info-text");
+            conPass.classList.remove("error");
             token = false;
         } else {
             passText.innerHTML = "";
@@ -89,11 +91,10 @@ function signUpSubmit() {
             // Confirm Password
             if (!conPass.value) {
                 conPass.classList.add("error");
-                conPassError.classList.add("err-txt");
-                conPassError.innerHTML =
-                    icon + `<span>Enter confirm password</span>`;
+                passError.classList.add("err-txt");
+                passError.innerHTML =
+                    icon + `<span>Confirm your password</span>`;
                 pass.classList.remove("error");
-                passError.innerHTML = "";
                 token = false;
             } else {
                 if (pass.value != conPass.value) {
@@ -103,13 +104,11 @@ function signUpSubmit() {
                     passError.innerHTML =
                         icon +
                         `<span>Those passwords didn’t match. Try again.</span>`;
-                    conPassError.innerHTML = "";
                     token = false;
                 } else {
                     pass.classList.remove("error");
                     conPass.classList.remove("error");
                     passError.innerHTML = "";
-                    conPassError.innerHTML = "";
                 }
             }
         }

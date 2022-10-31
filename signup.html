@@ -9,7 +9,7 @@
     <title>Create your Google Account</title>
 </head>
 
-<body>
+<body onload="isActive()">
     <section class="signup">
         <div class="signup-container ">
             <div class="signup-content border">
@@ -31,32 +31,30 @@
                                 <div class="input-box w-50" onchange="isActive()">
                                     <input type="text" class="input" name="fname" id="fname">
                                     <label for="fname" class="input-label">First Name</label>
-                                    <span id="fname-error"></span>
                                 </div>
                                 <div class="input-box w-50" onchange="isActive()">
                                     <input type="text" class="input" name="lname" id="lname">
                                     <label for="lname" class="input-label">Last Name</label>
-                                    <span id="lname-error"></span>
                                 </div>
                             </div>
+                            <div id="name-error"></div>
                             <div class="input-box w-100" onchange="isActive()">
                                 <input type="text" class="input" name="email" id="email">
                                 <label for="email" class="input-label">Username</label>
-                                <span id="mail-error"></span>
-                                <span id="mail-text" class="info-text">You can use letters, numbers & periods</span>
                             </div>
+                            <div id="mail-error"></div>
+                            <div id="mail-text" class="info-text">You can use letters, numbers & periods</div>
                             <div class="input-flex">
                                 <div class="input-box w-50" onchange="isActive()">
                                     <input type="password" class="input" name="pass" id="pass">
                                     <label for="pass" class="input-label">Password</label>
-                                    <span id="pass-error"></span>
                                 </div>
                                 <div class="input-box w-50" onchange="isActive()">
                                     <input type="password" class="input" name="conpass" id="conpass">
                                     <label for="conpass" class="input-label">Confirm</label>
-                                    <span id="conpass-error"></span>
                                 </div>
                             </div>
+                            <div id="pass-error"></div>
                             <div id="pass-text" class="info-text">Use 8 or more characters with a mix of
                                 letters, numbers & symbols</div>
 
