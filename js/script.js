@@ -8,10 +8,6 @@ function isActive() {
         }
     });
 }
-// isActive();
-function hehe() {
-    console.log("why this is not try");
-}
 
 let togglePass = true;
 function showPass() {
