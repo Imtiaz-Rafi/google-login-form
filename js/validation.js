@@ -11,17 +11,16 @@ let icon = `<svg
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
     </svg>`;
 function signUpSubmit() {
-    let signUpForm = document.forms.signUpForm;
-    signUpForm.onsubmit = function () {
+    // let signUpForm = document.forms.signUpForm;
+    let signUpForm = document.querySelector("#signUpForm");
+    signUpForm.addEventListener("submit", (e) => {
+        e.preventDefault();
         let token = true;
         let mailText = document.querySelector("#mail-text");
         let passText = document.querySelector("#pass-text");
         let nameError = document.querySelector("#name-error");
-        // let fnameError = document.querySelector("#fname-error");
-        // let lnameError = document.querySelector("#lname-error");
         let mailError = document.querySelector("#mail-error");
         let passError = document.querySelector("#pass-error");
-        // let conPassError = document.querySelector("#conpass-error");
 
         let fname = document.querySelector("#fname");
         let lname = document.querySelector("#lname");
@@ -113,26 +112,25 @@ function signUpSubmit() {
             }
         }
 
-        if (token === false) {
-            return false;
-        } else {
+        if (token === true) {
             const user = localStorage.setItem(
                 "name",
                 fname.value + " " + lname.value
             );
             const mail = localStorage.setItem("mail", email.value);
             const pswd = localStorage.setItem("password", pass.value);
-            return true;
+            location.href = signUpForm.action;
         }
-    };
+    });
 }
 
 function mailSubmit() {
-    let mailForm = document.forms.mailForm;
-    mailForm.onsubmit = function () {
+    let mailForm = document.querySelector("#mailForm");
+    mailForm.addEventListener("submit", (e) => {
+        e.preventDefault();
         let token = true;
-        let mailError = document.querySelector("#mail-error");
-        let email = document.querySelector("#email");
+        let email = document.querySelector("#login-email");
+        let mailError = document.querySelector("#login-mail-error");
 
         // EMAIL
         if (!email.value) {
@@ -153,30 +151,28 @@ function mailSubmit() {
                 mailError.innerHTML = "";
             }
         }
-        if (token === false) {
-            return false;
-        } else {
+        if (token === true) {
             // Email varification
             let validMail = localStorage.getItem("mail");
             if (validMail === email.value) {
-                return true;
+                location.href = mailForm.action;
             } else {
                 email.classList.add("error");
                 mailError.classList.add("err-txt");
                 mailError.innerHTML =
                     icon + `<p>Couldn't find your Google Account</p>`;
-                return false;
             }
         }
-    };
+    });
 }
 
 function passSubmit() {
-    let passForm = document.forms.passForm;
-    passForm.onsubmit = function () {
+    let passForm = document.querySelector("#passForm");
+    passForm.addEventListener("submit", (e) => {
+        e.preventDefault();
         let token = true;
-        let passError = document.querySelector("#pass-error");
-        let pass = document.querySelector("#pass");
+        let pass = document.querySelector("#login-pass");
+        let passError = document.querySelector("#login-pass-error");
         // PASSWORD
         if (!pass.value) {
             pass.classList.add("error");
@@ -185,10 +181,9 @@ function passSubmit() {
             token = false;
         } else {
             // Password verification
-
             let validPass = localStorage.getItem("password");
             if (validPass === pass.value) {
-                return true;
+                location.href = passForm.action;
             } else {
                 pass.classList.add("error");
                 passError.classList.add("err-txt");
@@ -198,6 +193,5 @@ function passSubmit() {
                 token = false;
             }
         }
-        return false;
-    };
+    });
 }

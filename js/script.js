@@ -22,3 +22,19 @@ function showPass() {
     }
     togglePass = !togglePass;
 }
+let togglePass2 = true;
+function showPass2() {
+    var pass = document.querySelector("#login-pass");
+    if (togglePass2) {
+        pass.type = "text";
+    } else {
+        pass.type = "password";
+    }
+    togglePass2 = !togglePass2;
+}
+
+function mailName() {
+    let mail = document.querySelector("#mail-name");
+    let validMail = localStorage.getItem("mail");
+    mail.innerHTML = validMail;
+}

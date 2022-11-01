@@ -9,7 +9,7 @@
     <title>Gmail</title>
 </head>
 
-<body>
+<body onload="mailName()">
     <section class="login">
         <div class="login-container ">
             <div class="login-content border">
@@ -36,9 +36,11 @@
                                         <p id="mail-name"></p>
                                     </div>
                                     <div class="down-arrow">
-                                        <svg aria-hidden="true" class="stUf5b MSBt4d" fill="currentColor" focusable="false"
-                                            width="24px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
-                                            <polygon points="12,16.41 5.29,9.71 6.71,8.29 12,13.59 17.29,8.29 18.71,9.71">
+                                        <svg aria-hidden="true" class="stUf5b MSBt4d" fill="currentColor"
+                                            focusable="false" width="24px" viewBox="0 0 24 24"
+                                            xmlns="https://www.w3.org/2000/svg">
+                                            <polygon
+                                                points="12,16.41 5.29,9.71 6.71,8.29 12,13.59 17.29,8.29 18.71,9.71">
                                             </polygon>
                                         </svg>
                                     </div>
@@ -49,19 +51,19 @@
 
                 </div>
                 <div class="signup-forms">
-                    <form action="welcome.html" method="post" name="passForm">
+                    <form action="welcome.html" name="passForm" id="passForm">
                         <div class="input-box w-100" onchange="isActive()">
-                            <input type="password" class="input login-input" name="pass" id="pass">
+                            <input type="password" class="input login-input" name="pass" id="login-pass">
                             <label for="pass" class="input-label login-label">Enter your password</label>
-                            <span id="pass-error"></span>
                         </div>
+                        <div id="login-pass-error"></div>
                         <div class="input-box input-check">
                             <div class="checkbox">
-                                <input type="checkbox" name="checkbox" id="checkbox" onchange="showPass()"
+                                <input type="checkbox" name="checkbox" id="checkbox" onchange="showPass2()"
                                     width="100px">
                                 <p class="check-text">Show Password</p>
                             </div>
-                        </div> 
+                        </div>
                         <div class="form-bottom">
                             <div class="link-btn">
                                 <a href="signup.html">Forgot Password</a>
