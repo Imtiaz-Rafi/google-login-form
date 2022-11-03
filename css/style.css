@@ -150,10 +150,8 @@ a {
     height: 50px;
     padding: 13px 15px;
 }
+
 .login-name {
-    width: 100%;
-}
-.login-link {
     display: flex;
     justify-content: center;
 }
@@ -321,6 +319,7 @@ input[type=checkbox] {
     border-radius: 4px;
     color: #0e5fc9;
 }
+
 .input-btn>a,
 .input-btn>button {
     font-family: "Google Sans", Roboto, Arial, sans-serif;

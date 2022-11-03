@@ -79,7 +79,7 @@ function signUpSubmit() {
         if (!pass.value) {
             pass.classList.add("error");
             passError.classList.add("err-txt");
-            passError.innerHTML = icon + `<span>Enter a password</span>`;
+            passError.innerHTML = icon + `<p>Enter a password</p>`;
             passText.innerHTML = "";
             passText.classList.remove("info-text");
             conPass.classList.remove("error");
@@ -87,22 +87,29 @@ function signUpSubmit() {
         } else {
             passText.innerHTML = "";
             passText.classList.remove("info-text");
-            // Confirm Password
-            if (!conPass.value) {
-                conPass.classList.add("error");
+            let passRegex = "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$";
+            if (!pass.value.match(passRegex)) {
+                pass.classList.add("error");
                 passError.classList.add("err-txt");
                 passError.innerHTML =
-                    icon + `<span>Confirm your password</span>`;
+                    icon + `<p>Use 8 characters or more for your password</p>`;
+                token = false;
+            }
+            // Confirm Password
+            else if (!conPass.value) {
+                conPass.classList.add("error");
+                passError.classList.add("err-txt");
+                passError.innerHTML = icon + `<p>Confirm your password</p>`;
                 pass.classList.remove("error");
                 token = false;
             } else {
                 if (pass.value != conPass.value) {
-                    pass.classList.add("error");
+                    pass.classList.remove("error");
                     conPass.classList.add("error");
                     passError.classList.add("err-txt");
                     passError.innerHTML =
                         icon +
-                        `<span>Those passwords didn’t match. Try again.</span>`;
+                        `<p>Those passwords didn’t match. Try again.</p>`;
                     token = false;
                 } else {
                     pass.classList.remove("error");
